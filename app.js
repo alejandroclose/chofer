@@ -11,9 +11,11 @@ const flash = require('connect-flash');
 const dbName = 'chofer';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+
 const indexRouter = require('./routes/index');
 const booksRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const tripsRouter = require('./routes/trips');
 
 const app = express();
 
@@ -56,6 +58,7 @@ app.use('/trips', (req, res, next) => {
     res.redirect('/auth/login');
   }
 }, booksRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,9 +71,13 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  // render the error page 404
+  res.status(err.status);
+  res.render('error-404');
+
+  // render the error page 500
+  res.status (500);
+  res.render('error-500')
 });
 
 module.exports = app;
