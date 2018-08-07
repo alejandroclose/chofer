@@ -10,9 +10,9 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { username, password } = req.body;
+  const { username, password ,email} = req.body;
 
-  if ( !username || !password) {
+  if ( !username || !password || !email) {
     res.render('signup', { message: 'no campos vacios'});
   } else {
     User.findOne({ username })
@@ -24,10 +24,11 @@ router.post('/signup', (req, res, next) => {
           const hashedPassword = bcrypt.hashSync(password, salt);
           User.create({
             username,
+            email,
             password: hashedPassword
           })
           .then(newUser => {
-            res.redirect('/map')
+            res.redirect('/trips')
           })
           .catch(error => {
             next(error);
@@ -48,8 +49,8 @@ router.get('/login', (req, res, next) => {
 })
 
 router.post('/login', (req, res, next) => {
-  const { username, password } = req.body;
-  if ( !username || !password) {
+  const { username, password, email } = req.body;
+  if ( !username || !password || !email) {
     req.flash('info', 'no campos vacios');
     res.redirect('/auth/login')
   } else {

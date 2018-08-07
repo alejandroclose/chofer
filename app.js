@@ -13,10 +13,8 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 
 
 const indexRouter = require('./routes/index');
-const booksRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const tripsRouter = require('./routes/trips');
-
 
 const app = express();
 
@@ -49,8 +47,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/auth', authRouter);
 app.use('/', indexRouter);
+app.use('/auth', authRouter);
 app.use('/trips', (req, res, next) => {
   if (req.session.currentUser) {
     next();
@@ -58,7 +56,7 @@ app.use('/trips', (req, res, next) => {
     req.flash('info', 'tienes que logearte');
     res.redirect('/auth/login');
   }
-}, booksRouter);
+}, tripsRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
@@ -78,7 +76,7 @@ app.use((err, req, res, next) => {
 
   // render the error page 500
   res.status (500);
-  res.render('error-500')
+  res.render('error-500');
 });
 
 module.exports = app;
