@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 
 app.use('/auth', authRouter);
 app.use('/', indexRouter);
-app.use('/map', (req, res, next) => {
+app.use('/trips', (req, res, next) => {
   if (req.session.currentUser) {
     next();
   } else {
