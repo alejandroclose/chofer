@@ -8,8 +8,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require('connect-flash');
 
-const dbName = 'chofer';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect('mongodb://chofer:choferapp1@ds217002.mlab.com:17002/chofer-app');
 
 
 const indexRouter = require('./routes/index');
@@ -57,7 +56,7 @@ app.use('/trips', (req, res, next) => {
     res.redirect('/auth/login');
   }
 }, tripsRouter);
-// app.use('/users', usersRouter);
+// app.use('/users', usersRouter); --> why did Pere deleted it?
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
