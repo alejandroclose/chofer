@@ -24,6 +24,8 @@ a {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
+  padding-left: 500px;
+  padding-right:500px;
   margin-top: 50px;
 }
 
@@ -33,6 +35,7 @@ a {
   padding-top: 100px;
   padding-bottom: 100px;
   margin-top: 50px;
+  
 }
 
 
