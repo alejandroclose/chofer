@@ -8,12 +8,10 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require('connect-flash');
 
-const dbName = 'chofer';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect('mongodb://chofer:choferapp1@ds217002.mlab.com:17002/chofer-app');
 
 
 const indexRouter = require('./routes/index');
-const booksRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const tripsRouter = require('./routes/trips');
 
@@ -48,8 +46,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/auth', authRouter);
 app.use('/', indexRouter);
+app.use('/auth', authRouter);
 app.use('/trips', (req, res, next) => {
   if (req.session.currentUser) {
     next();
@@ -57,8 +55,8 @@ app.use('/trips', (req, res, next) => {
     req.flash('info', 'tienes que logearte');
     res.redirect('/auth/login');
   }
-}, booksRouter);
-// app.use('/users', usersRouter);
+}, tripsRouter);
+// app.use('/users', usersRouter); --> why did Pere deleted it?
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,13 +69,12 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page 404
-  res.status(err.status);
-  res.render('error-404');
-
-  // render the error page 500
-  res.status (500);
-  res.render('error-500')
-});
+    // render the error page 404
+    res.status(err.status);
+    res.render('error-404');
+     // render the error page 500
+    res.status (500);
+    res.render('error-500')
+  });
 
 module.exports = app;

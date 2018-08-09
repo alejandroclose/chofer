@@ -27,7 +27,7 @@ router.post('/signup', (req, res, next) => {
             password: hashedPassword
           })
           .then(newUser => {
-            res.redirect('/map')
+            res.redirect('/trips')
           })
           .catch(error => {
             next(error);
