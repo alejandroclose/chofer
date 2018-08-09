@@ -49,12 +49,12 @@ router.get('/login', (req, res, next) => {
 })
 
 router.post('/login', (req, res, next) => {
-  const { username, password, email } = req.body;
-  if ( !username || !password || !email) {
+  const {  password, email } = req.body;
+  if (  !password || !email) {
     req.flash('info', 'No deje campos vacios');
     res.redirect('/auth/login')
   } else {
-    User.findOne({ username })
+    User.findOne({ email })
       .then(user => {
         if (user) {
           if (bcrypt.compareSync(password, user.password)) {
