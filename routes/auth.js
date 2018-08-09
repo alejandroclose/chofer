@@ -10,12 +10,12 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { username, password ,email} = req.body;
+  const { name, password ,email} = req.body;
 
-  if ( !username || !password || !email) {
+  if ( !name || !password || !email) {
     res.render('signup', { message: 'No deje campos vacios'});
   } else {
-    User.findOne({ username })
+    User.findOne({ name })
       .then(user => {
         if (user) {
           res.render('signup', { message: 'Usuario o contraseña ya existen' });
@@ -23,7 +23,7 @@ router.post('/signup', (req, res, next) => {
           const salt = bcrypt.genSaltSync(saltRounds);
           const hashedPassword = bcrypt.hashSync(password, salt);
           User.create({
-            username,
+            name,
             email,
             password: hashedPassword
           })
