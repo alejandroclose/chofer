@@ -13,12 +13,12 @@ router.post('/signup', (req, res, next) => {
   const { username, password ,email} = req.body;
 
   if ( !username || !password || !email) {
-    res.render('signup', { message: 'no campos vacios'});
+    res.render('signup', { message: 'No deje campos vacios'});
   } else {
     User.findOne({ username })
       .then(user => {
         if (user) {
-          res.render('signup', { message: 'usuario ya existe' });
+          res.render('signup', { message: 'Usuario o contraseña ya existen' });
         } else {
           const salt = bcrypt.genSaltSync(saltRounds);
           const hashedPassword = bcrypt.hashSync(password, salt);
@@ -51,7 +51,7 @@ router.get('/login', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   const { username, password, email } = req.body;
   if ( !username || !password || !email) {
-    req.flash('info', 'no campos vacios');
+    req.flash('info', 'No deje campos vacios');
     res.redirect('/auth/login')
   } else {
     User.findOne({ username })
@@ -61,11 +61,11 @@ router.post('/login', (req, res, next) => {
             req.session.currentUser = user;
             res.redirect('/trips');
           } else {
-            req.flash('info', 'username o password erroneo');
+            req.flash('info', 'Username o password incorrectos');
             res.redirect('/auth/login')
           }
         } else {
-          req.flash('info', 'username o password erroneo');
+          req.flash('info', 'Username o password incorrectos');
           res.redirect('/auth/login')
         }
       })
