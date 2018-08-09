@@ -10,7 +10,7 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { username, password ,email} = req.body;
+  const { name, password ,email} = req.body;
 
   if ( !username || !password || !email) {
     res.render('signup', { message: 'No deje campos vacios'});
