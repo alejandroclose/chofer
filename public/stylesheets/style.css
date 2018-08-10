@@ -16,7 +16,22 @@ a {
 
 #map {
   height: 500px;
-  width: 400px;
+  width: 1400px;
+}
+
+#instructions {
+  height: 300px;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-y: scroll;
+  font-family: sans-serif;
+}
+
+#directions{
+  height: 500px;
+  width: 1800px;
 }
 
 #signup{
