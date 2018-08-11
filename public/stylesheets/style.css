@@ -35,7 +35,9 @@ a {
   margin-top: 50px;
   
 }
-
+#logout{
+  text-align: right;
+}
 #home{
   text-align: center;
   font-size: 20px;
