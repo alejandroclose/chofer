@@ -19,7 +19,7 @@ function getRoute() {
   var start = [2.15899, 41.38879];
   var end = [2.18606, 41.3689];
   var directionsRequest =
-    "https://api.mapbox.com/directions/v5/mapbox/cycling/" +
+    "https://api.mapbox.com/directions/v5/mapbox/driving-traffic/" +
     start[0] +
     "," +
     start[1] +
