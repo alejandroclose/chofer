@@ -1,12 +1,14 @@
-<div id="logout"><a href="/auth/login">Log Out</a></div>
+
+<div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
-{{{name}}}
 <div id='navigator'>
 <div id='map'></div>
 <div class="directions">
   <form>
+    <label>Origin</label>
     <input type="text" name="origin" id="origin">
+    <label>Destination</label>
     <input type="text" name="destination" id="destination">
   </form>
 </div>
