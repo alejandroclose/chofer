@@ -2,22 +2,21 @@
 <p>Welcome to {{title}}</p>
 {{name}}
 <div id='navigator'>
-<div id="directions">
-  <form>
-    <label for="origin">Origin</label>
-    <br>
-    <input type="text" name="origin" id="origin">
-    <br>
-    <br>
-    <label for="destination">Destination</label>
-    <br>
-    <input type="text" name="destination" id="destination">
-  </form>
+  <div id="directions">
+    <form>
+      <label for="origin">Origin</label>
+      <br>
+      <div id='geocoder' class='geocoder'></div>
+      <br>
+      <br>
+      <label for="destination">Destination</label>
+      <br>
+      <input type="text" name="destination" id="destination">
+    </form>
+  </div>
+  <div id='map'></div>
+  <br>
+  <h5>¿Cómo llegar?</h5>
+  <div id='instructions'></div>
 </div>
-<div id='map'></div>
-<br>
-<h5>¿Cómo llegar?</h5>
-<div id='instructions'></div>
-</div>
-
-
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>

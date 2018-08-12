@@ -20,6 +20,16 @@ a {
   width: 100%;
 }
 
+/* .geocoder {
+  position:absolute;
+  z-index:1;
+  width:50%;
+  left:50%;
+  margin-left:-25%;
+  top:20px;
+} */
+.mapboxgl-ctrl-geocoder { min-width:100%; }
+
 #instructions {
   height: 300px;
   width: 100%;

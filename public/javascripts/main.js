@@ -9,6 +9,18 @@ const map = new mapboxgl.Map({
   zoom: 14 // starting zoom
 });
 
+//Forward Geocoding
+const geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken
+})
+// geocoder.on('result', (data)=>{
+//   console.log(data);
+//   document.getElementById('latitude').value = data.result.center[1];
+//   document.getElementById('longitude').value = data.result.center[0];
+// });
+map.addControl(geocoder);
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 //Route
 map.on("load", () => {
   getRoute();
