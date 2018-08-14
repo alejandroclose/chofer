@@ -18,8 +18,38 @@ const geocoder = new MapboxGeocoder({
 //   document.getElementById('latitude').value = data.result.center[1];
 //   document.getElementById('longitude').value = data.result.center[0];
 // });
-map.addControl(geocoder);
+// map.addControl(geocoder);
+
+// add to the origin label in trips.hbs
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+console.log(geocoder.coordinates)
+// point in the map searched by origin label. 
+map.on('load', function() {
+  map.addSource('single-point', {
+      "type": "geojson",
+      "data": {
+          "type": "FeatureCollection",
+          "features": []
+      }
+  });
+
+  map.addLayer({
+      "id": "point",
+      "source": "single-point",
+      "type": "circle",
+      "paint": {
+          "circle-radius": 13,
+          "circle-color": "#007cbf"
+      }
+  });
+
+  // Listen for the `result` event from the MapboxGeocoder that is triggered when a user
+  // makes a selection and add a symbol that matches the result.
+  geocoder.on('result', function(ev) {
+      map.getSource('single-point').setData(ev.result.geometry);
+  });
+});
 
 //Route
 map.on("load", () => {
