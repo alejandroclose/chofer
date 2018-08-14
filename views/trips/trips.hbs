@@ -7,12 +7,12 @@
     <form>
       <label for="origin">Origin</label>
       <br>
-      <div id='geocoder' class='geocoder'></div>
+      <input type="text" name="destination" id="destination">
       <br>
       <br>
       <label for="destination">Destination</label>
       <br>
-      <input type="text" name="destination" id="destination">
+      <div id='geocoder' class='geocoder'></div>
     </form>
   </div>
   <div id='map'></div>
@@ -20,4 +20,5 @@
   <h5>¿Cómo llegar?</h5>
   <div id='instructions'></div>
 </div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>

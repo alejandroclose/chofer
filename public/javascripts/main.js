@@ -2,54 +2,26 @@ console.log("main.js");
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYWxlamFuZHJvY2xvc2UiLCJhIjoiY2prYTFkODU1MDhidzN2cWp1bmFseGxoZSJ9.HeAugAVJ8wr3NHFCOnkn-Q";
-const map = new mapboxgl.Map({
-  container: "map", // container id
-  style: "mapbox://styles/mapbox/streets-v9", // stylesheet location
-  center: [2.15899, 41.38879],
-  zoom: 14 // starting zoom
-});
 
-//Forward Geocoding
-const geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken
-})
-// geocoder.on('result', (data)=>{
-//   console.log(data);
-//   document.getElementById('latitude').value = data.result.center[1];
-//   document.getElementById('longitude').value = data.result.center[0];
-// });
-// map.addControl(geocoder);
 
-// add to the origin label in trips.hbs
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+  navigator.geolocation.getCurrentPosition(position => {
+    const point = [position.coords.longitude, position.coords.latitude];
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+      center: point, // starting position [lng, lat]
+      zoom: 14 // starting zoom
+    });
+    var marker = new mapboxgl.Marker()
+    .setLngLat(point)
+    .addTo(map);
 
-console.log(geocoder.coordinates)
-// point in the map searched by origin label. 
-map.on('load', function() {
-  map.addSource('single-point', {
-      "type": "geojson",
-      "data": {
-          "type": "FeatureCollection",
-          "features": []
-      }
-  });
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+    })
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
-  map.addLayer({
-      "id": "point",
-      "source": "single-point",
-      "type": "circle",
-      "paint": {
-          "circle-radius": 13,
-          "circle-color": "#007cbf"
-      }
-  });
-
-  // Listen for the `result` event from the MapboxGeocoder that is triggered when a user
-  // makes a selection and add a symbol that matches the result.
-  geocoder.on('result', function(ev) {
-      map.getSource('single-point').setData(ev.result.geometry);
-  });
-});
+const startLatLong = [position.coords.longitude, position.coords.latitude]; 
 
 //Route
 map.on("load", () => {
@@ -58,7 +30,7 @@ map.on("load", () => {
 
 function getRoute() {
   console.log("routes started");
-  var start = [2.15899, 41.38879];
+  var start = startLatLong;
   var end = [2.18606, 41.3689];
   var directionsRequest =
     "https://api.mapbox.com/directions/v5/mapbox/driving-traffic/" +
@@ -128,3 +100,6 @@ function getRoute() {
     });
   });
 }
+}, (error) => {
+  console.error('No puedo obtener la locaclización', error);
+})
