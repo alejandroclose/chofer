@@ -52,9 +52,9 @@ function getRoute() {
     url: directionsRequest
   }).done(function(data) {
     console.log(data);
-    const routeDistance = data.routes[0].distance;
+    const routeDistance = data.routes[0].distance /1000;
     const routeTime = data.routes[0].duration / 60;
-    document.getElementById('distance').value = routeDistance;
+    document.getElementById('distance').innerHTML = routeDistance;
     document.getElementById('time').innerHTML = routeTime;
     
 
