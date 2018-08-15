@@ -13,7 +13,7 @@ mapboxgl.accessToken =
       center: point, // starting position [lng, lat]
       zoom: 14 // starting zoom
     });
-    var marker = new mapboxgl.Marker()
+    var originMarker = new mapboxgl.Marker()
     .setLngLat(point)
     .addTo(map);
 
@@ -21,6 +21,23 @@ mapboxgl.accessToken =
       accessToken: mapboxgl.accessToken
     })
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+    geocoder.on('result', (data)=>{
+      const endLatLong = data.result.center;
+
+      var destinationMarker = new mapboxgl.Marker()
+    .setLngLat(endLatLong)
+    .addTo(map);
+
+    });
+
+    
+
+    // var destinationMarker = new mapboxgl.Marker()
+    // .setLngLat(endLatLong)
+    // .addTo(map);
+
+
 
 const startLatLong = [position.coords.longitude, position.coords.latitude]; 
 
