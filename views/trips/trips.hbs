@@ -1,18 +1,17 @@
-
 <div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 <div id='navigator'>
   <div id="directions">
     <form>
-      <label for="origin">Origin</label>
+      <label for="origin">Origen</label>
       <br>
-      <div id='geocoder' class='geocoder'></div>
+      <input type="text" name="destination" id="destination" value="Tu ubicación actual">
       <br>
       <br>
       <label for="destination">Destination</label>
       <br>
-      <input type="text" name="destination" id="destination">
+      <div id='geocoder' class='geocoder'></div>
     </form>
   </div>
   <div id='map'></div>
@@ -39,4 +38,5 @@
   <h3>Cabify</h3>
  <a href="/trips/cabify">Tarifas </a>
 </div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
