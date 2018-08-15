@@ -6,6 +6,7 @@ mapboxgl.accessToken =
 
   navigator.geolocation.getCurrentPosition(position => {
     const point = [position.coords.longitude, position.coords.latitude];
+    console.log(point)
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
