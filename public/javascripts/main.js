@@ -32,8 +32,6 @@ mapboxgl.accessToken =
     getRoute();
 
     //Route
-  
-
 function getRoute() {
   console.log("routes started");
   var start = startLatLong;
@@ -53,6 +51,13 @@ function getRoute() {
     method: "GET",
     url: directionsRequest
   }).done(function(data) {
+    console.log(data);
+    const routeDistance = data.routes[0].distance;
+    const routeTime = data.routes[0].duration / 60;
+    document.getElementById('distance').value = routeDistance;
+    document.getElementById('time').innerHTML = routeTime;
+    
+
     var route = data.routes[0].geometry;
     var instructions = document.getElementById("instructions");
     var steps = data.routes[0].legs[0].steps;
