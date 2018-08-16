@@ -54,8 +54,8 @@ function getRoute() {
     url: directionsRequest
   }).done(function(data) {
     console.log(data);
-    const routeDistance = data.routes[0].distance /1000;
-    const routeTime = data.routes[0].duration / 60;
+    const routeDistance = (data.routes[0].distance /1000).toFixed(2);
+    const routeTime = (data.routes[0].duration / 60).toFixed(2);
     document.getElementById('distance').innerHTML = routeDistance;
     document.getElementById('time').innerHTML = routeTime;
     
@@ -111,17 +111,27 @@ function getRoute() {
         }
       }
     });
+    var taxiRoute = {
+      cost: (2.25 + (1.13* routeDistance)).toFixed(2)
+    }
+     document.getElementById('taxi-route').innerHTML = taxiRoute.cost + '€';
+
+    var cabifyRoute = {
+      cost: (2 * routeDistance).toFixed(2)
+    }
+    document.getElementById('cabify-route').innerHTML = cabifyRoute.cost + '€';
+
+    var uberRoute = {
+      cost: ((1.42 * routeDistance) + (0.16 * routeTime)).toFixed(2)
+    }
+    document.getElementById('uber-route').innerHTML = uberRoute.cost + '€';
+
+
   });
+
 }
 
     });
-
-
-
-
-
-
-
 }, (error) => {
   console.error('No puedo obtener la locaclización', error);
 })
