@@ -1,4 +1,3 @@
-
 <div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
@@ -6,19 +5,20 @@
   <div id="directions">
     <form>
       <label for="origin">Origen</label>
+      <span><img src='public/images/current-location.png'/></span>
       <br>
-      <input type="text" name="destination" id="destination" value="Tu ubicación actual">
+      <input type="text" name="origin" id="origin" value="Tu ubicación actual">
       <br>
       <br>
-      <label for="destination">Destination</label>
       <br>
+      <label for="destination">Destino</label>
+      <span><img src='public/images/current-location.png'/></span>
       <div id='geocoder' class='geocoder'></div>
     </form>
   </div>
   <div id='map'></div>
   <br>
 <div class='route-info'>
-
 <div class='distance'>
   <p>Distancia</p>
   <div id='distance'>
@@ -26,7 +26,8 @@
   </div>
   km
 </div>
-
+<br>
+<br>
   <div class='time'>
     <p>Tiempo</p>
     <div id="time">
@@ -41,6 +42,20 @@
   <br>
   <h5>¿Cómo llegar?</h5>
   <div id='instructions'></div>
+</div>
+<div id="logos">
+<div class="d-inline-block bg-warning">
+  <h3> Taxi</h3>
+  <a href="/trips/taxi">Tarifas</a>
+</div>
+<div class="d-inline-block bg-warning">
+  <h3> Uber</h3>
+ <a href="/trips/uber">Tarifas</a>
+</div>
+<div class="d-inline-block bg-warning">
+  <h3>Cabify</h3>
+ <a href="/trips/cabify">Tarifas </a>
+</div>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>

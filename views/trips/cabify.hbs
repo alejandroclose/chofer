@@ -1,0 +1,33 @@
+<div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
+<div class="container" id="detalles">
+     <div id="directions">
+    <form>
+        <label for="origin">Origin</label>
+        <br>
+        <input type="text" name="destination" id="destination">
+        <div id='geocoder' class='geocoder'></div>
+        <br>
+        <br>
+        <label for="destination">Destination</label>
+        <br>
+        <input type="text" name="destination" id="destination">
+    </form>
+</div>
+<br>
+<div>
+    <h2>Detalles de la tarifa Cabify </h2>
+    <p>Bajada de bandera     0,55 €</p>
+    <p>Distancia</p>
+    <p>Precio por Kms        1,70 €</p>
+    <p>Tiempo aproximado</p>
+    <h5>Precio Total</h5>
+</div>
+
+<div class="d-inline-block bg-warning">
+  <h3> Uber</h3>
+ <a href="/trips/uber">Tarifas</a>
+</div>
+<div class="d-inline-block bg-warning">
+  <h3>Taxi</h3>
+ <a href="/trips/taxi">Tarifas </a>
+</div>

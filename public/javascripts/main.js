@@ -21,8 +21,10 @@ mapboxgl.accessToken =
       accessToken: mapboxgl.accessToken
     })
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-    const startLatLong = [position.coords.longitude, position.coords.latitude]; 
 
+
+
+    const startLatLong = [position.coords.longitude, position.coords.latitude]; 
     geocoder.on('result', (data)=>{
       const endLatLong = data.result.center;
 
