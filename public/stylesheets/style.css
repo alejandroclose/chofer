@@ -30,6 +30,20 @@ a {
 } */
 .mapboxgl-ctrl-geocoder { min-width:100%; }
 
+.
+
+.time{
+  height: 100px;
+  width: 50%;
+  font-size: 1em;
+}
+
+.distance{
+  height: 100px;
+  widht: 50%;
+  font-size: 1em;
+}
+
 #instructions {
   height: 300px;
   width: 100%;

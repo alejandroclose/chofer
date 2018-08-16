@@ -13,7 +13,7 @@ mapboxgl.accessToken =
       center: point, // starting position [lng, lat]
       zoom: 14 // starting zoom
     });
-    var marker = new mapboxgl.Marker()
+    var originMarker = new mapboxgl.Marker()
     .setLngLat(point)
     .addTo(map);
 
@@ -21,18 +21,21 @@ mapboxgl.accessToken =
       accessToken: mapboxgl.accessToken
     })
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    const startLatLong = [position.coords.longitude, position.coords.latitude]; 
 
-const startLatLong = [position.coords.longitude, position.coords.latitude]; 
+    geocoder.on('result', (data)=>{
+      const endLatLong = data.result.center;
 
-//Route
-map.on("load", () => {
-  getRoute();
-});
+      var destinationMarker = new mapboxgl.Marker()
+    .setLngLat(endLatLong)
+    .addTo(map);
+    getRoute();
 
+    //Route
 function getRoute() {
   console.log("routes started");
   var start = startLatLong;
-  var end = [2.18606, 41.3689];
+  var end = endLatLong;
   var directionsRequest =
     "https://api.mapbox.com/directions/v5/mapbox/driving-traffic/" +
     start[0] +
@@ -48,6 +51,13 @@ function getRoute() {
     method: "GET",
     url: directionsRequest
   }).done(function(data) {
+    console.log(data);
+    const routeDistance = data.routes[0].distance /1000;
+    const routeTime = data.routes[0].duration / 60;
+    document.getElementById('distance').innerHTML = routeDistance;
+    document.getElementById('time').innerHTML = routeTime;
+    
+
     var route = data.routes[0].geometry;
     var instructions = document.getElementById("instructions");
     var steps = data.routes[0].legs[0].steps;
@@ -101,6 +111,15 @@ function getRoute() {
     });
   });
 }
+
+    });
+
+
+
+
+
+
+
 }, (error) => {
   console.error('No puedo obtener la locaclización', error);
 })
