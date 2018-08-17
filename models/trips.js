@@ -18,3 +18,4 @@ const tripsSchema = new Schema({
 const User = mongoose.model("Trips", userSchema);
 
 module.exports = Trips;
+
