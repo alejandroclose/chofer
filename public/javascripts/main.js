@@ -36,7 +36,6 @@ $(document).ready(function() {
         function getRoute() {
           console.log("routes started");
           $('#full-route').removeClass('d-none');
-          console.log("jquery remove");
           var start = startLatLong;
           var end = endLatLong;
           var directionsRequest =
@@ -54,7 +53,6 @@ $(document).ready(function() {
             method: "GET",
             url: directionsRequest
           }).done(function(data) {
-            console.log(data);
             const routeDistance = (data.routes[0].distance / 1000).toFixed(2);
             const routeTime = (data.routes[0].duration / 60).toFixed(0);
             document.getElementById("distance").innerHTML = routeDistance;
@@ -129,13 +127,14 @@ $(document).ready(function() {
             document.getElementById("uber-route").innerHTML =
               uberRoute.cost + "€";
 
+              
             //Modal
 
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
-              console.log($(this));
               switch (serviceSelect) {
                 case "taxi-service":
+                console.log('taxi');
                   $(".modal-title").html("Taxi");
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
                   $(".price").attr('value', taxiRoute.cost);
@@ -148,8 +147,10 @@ $(document).ready(function() {
                   $(".bajada-bandera").html("Bajada de bandera: 2,25€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 1,13€");
+                  break;
 
                 case "uber-service":
+                console.log('uber');
                   $(".modal-title").html("Uber");
                   $(".modal-price").html("Total: " + uberRoute.cost + "€");
                   $(".modal-time").html(
@@ -161,8 +162,10 @@ $(document).ready(function() {
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0,16€");
                   $(".modal-km-cost").html("Coste por km: 1,42€");
+                  break;
 
                 case "cabify-service":
+                console.log('cabify');
                   $(".modal-title").html("Cabify");
                   $(".modal-price").html("Total: " + cabifyRoute.cost + "€");
                   $(".modal-time").html(
@@ -174,6 +177,7 @@ $(document).ready(function() {
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 2€");
+                  break;
               }
             });
           });
