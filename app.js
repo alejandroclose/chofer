@@ -17,10 +17,12 @@ mongoose.connect('mongodb://chofer:choferapp1@ds217002.mlab.com:17002/chofer-app
     console.log('🙁');
   })
 
-
+  
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const tripsRouter = require('./routes/trips');
+const routesRouter = require('./routes/routes');
+
 
 const app = express();
 
@@ -53,6 +55,8 @@ app.use(auth.setCurrentUser);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/trips', auth.isLoggedIn, tripsRouter);
+app.use('/routes', auth.isLoggedIn, routesRouter);
+
 // app.use('/users', usersRouter); --> why did Pere deleted it?
 
 // catch 404 and forward to error handler

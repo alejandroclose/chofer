@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const User = require('../models/user');
+
 /* GET map page. */
 router.get('/', function(req, res, next) {
   res.render('trips/trips', { title: 'Chofer Map' });
@@ -18,4 +20,7 @@ router.get('/cabify', function(req, res, next) {
   res.render('trips/cabify', { title: 'Cabify' });
 });
 
+
+
 module.exports = router;
+
