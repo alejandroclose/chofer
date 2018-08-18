@@ -36,6 +36,8 @@ mapboxgl.accessToken =
     //Route
 function getRoute() {
   console.log("routes started");
+  $('#full-route').removeClass('d-none');
+  console.log('jquery remove')
   var start = startLatLong;
   var end = endLatLong;
   var directionsRequest =
