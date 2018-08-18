@@ -126,6 +126,8 @@ function getRoute() {
     }
     document.getElementById('uber-route').innerHTML = uberRoute.cost + '€';
 
+    //Modal
+    document.querySelector('#modal .modal-body').innerHTML = "- El precio es: " + taxiRoute.cost;
 
   });
 
