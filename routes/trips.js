@@ -20,7 +20,10 @@ router.get('/cabify', function(req, res, next) {
   res.render('trips/cabify', { title: 'Cabify' });
 });
 
-
+router.post('/', function(req,res,next){
+  console.log(req.body);
+  res.redirect('/routes');
+});
 
 module.exports = router;
 

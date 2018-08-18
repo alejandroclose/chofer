@@ -35,7 +35,7 @@ $(document).ready(function() {
         //Route
         function getRoute() {
           console.log("routes started");
-          // $('#full-route').removeClass('d-none');
+          $('#full-route').removeClass('d-none');
           console.log("jquery remove");
           var start = startLatLong;
           var end = endLatLong;
@@ -138,6 +138,7 @@ $(document).ready(function() {
                 case "taxi-service":
                   $(".modal-title").html("Taxi");
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
+                  $(".price").attr('value', taxiRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );

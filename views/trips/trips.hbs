@@ -23,8 +23,8 @@
   </div>
   <div id='map'></div>
 
-  {{!-- class='d-none' --}}
-  <div id='full-route'>
+  
+  <div id='full-route' class='d-none'>
 
     {{!-- Route distance and time --}}
     <div class='route-info'>
@@ -84,19 +84,22 @@
       <div class="modal-body">
         <h3 class="modal-price"></h3>
         <br>
-        <h5>Detalles</h5>
-        <div class="modal-time"></div>
-        <div class="modal-distance"></div>
-        <br>
-        <h5>Tarifas</h5>
-        <div class="bajada-bandera"></div>
-        <div class="modal-minute-cost"></div>
-        <div class="modal-km-cost"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+          <h5>Detalles</h5>
+          <div class="modal-time"></div>
+          <div class="modal-distance"></div>
+          <br>
+          <h5>Tarifas</h5>
+          <div class="bajada-bandera"></div>
+          <div class="modal-minute-cost"></div>
+          <div class="modal-km-cost"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action='/trips' method="POST">
+          <input type="text" name='price' class="price" hidden>
+          <button class="btn btn-primary" type="submit">Save changes</button>
+      </form>
+        </div>
     </div>
   </div>
 </div>
