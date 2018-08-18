@@ -1,0 +1,14 @@
+<div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
+<div class="container" id="detalles">
+<h3>Editar</h3>
+<form action="/routes/{{id}}" method="post">
+  <label for="">Origen:</label>
+  <input type="text" name="origen" value="{{origen}}">
+
+  <label for="">Destino:</label>
+  <input type="text" name="destino" value="{{destino}}">
+ 
+  <button type="submit">Update</button>
+</form>
+</div>
+<div id='map'></div>

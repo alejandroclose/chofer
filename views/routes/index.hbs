@@ -1,0 +1,19 @@
+<div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
+<div class="container" id="detalles">
+<h1> Your Routes</h1>
+<div>
+ <a href="/routes/new">New route</a>
+</div>
+<br><br>
+<ul>
+  {{#each routes}}
+    <li> 
+      Viaje - {{ @index }} - {{origen}}-{{destino}}
+      <a href="/routes/{{_id}}/edit">Editar</a>
+      <form action="/routes/{{_id}}/remove" method="post">
+        <input type="submit" value="delete">
+      </form>
+    </li>
+  {{/each}}
+</ul>
+</div>

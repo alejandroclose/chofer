@@ -14,6 +14,6 @@ const routesSchema = new Schema({
     }
   });
 
-const User = mongoose.model("Routes", userSchema);
+const Routes = mongoose.model("Routes", routesSchema);
 
 module.exports = Routes;
