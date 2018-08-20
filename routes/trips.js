@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const Trip = require('../models/trip');
 
 const User = require('../models/user');
 
@@ -20,10 +21,20 @@ router.get('/cabify', function(req, res, next) {
   res.render('trips/cabify', { title: 'Cabify' });
 });
 
+// Post to save trip to db
 router.post('/', function(req,res,next){
-  console.log(req.body);
-  res.redirect('/routes');
+  
+  const user = req.session.currentUser.email;
+  const { price, origin, destination, service } = req.body;
+
+  Trip.create({ user, origin, destination, service, price})
+    .then(data => {
+      res.redirect('/routes');
+    })
+    .catch(error => {
+      next(error);
+    })
+  
 });
 
 module.exports = router;
-

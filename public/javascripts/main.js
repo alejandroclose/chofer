@@ -24,6 +24,8 @@ $(document).ready(function() {
         position.coords.longitude,
         position.coords.latitude
       ];
+      
+      // Destination geocoder
       geocoder.on("result", data => {
         const endLatLong = data.result.center;
 
@@ -53,6 +55,12 @@ $(document).ready(function() {
             method: "GET",
             url: directionsRequest
           }).done(function(data) {
+            console.log(data);
+
+            const routeOrigin = data.waypoints[0].name;
+            const routeDestination = data.waypoints[1].name;
+
+
             const routeDistance = (data.routes[0].distance / 1000).toFixed(2);
             const routeTime = (data.routes[0].duration / 60).toFixed(0);
             document.getElementById("distance").innerHTML = routeDistance;
@@ -109,6 +117,9 @@ $(document).ready(function() {
                 }
               }
             });
+
+            console.log(routeDestination);
+
             var taxiRoute = {
               cost: (2.25 + 1.13 * routeDistance).toFixed(2)
             };
@@ -132,6 +143,8 @@ $(document).ready(function() {
 
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
+                  $(".modal-origin").html("Origen: " + routeOrigin);
+                  $(".modal-destination").html("Destino: " + routeDestination);
               switch (serviceSelect) {
                 case "taxi-service":
                 console.log('taxi');

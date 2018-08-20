@@ -49,15 +49,15 @@
     {{!-- Route cost on services --}}
 
     <div id="select-service">
-      <div id="taxi-service" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
+      <div id="taxi-service" name="taxi" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
         <h3> Taxi</h3>
         <p id='taxi-route'>-</p>
       </div>
-      <div id="uber-service" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
+      <div id="uber-service" name="uber" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
         <h3> Uber</h3>
         <p id='uber-route'>-</p>
       </div>
-      <div id="cabify-service" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
+      <div id="cabify-service" name="cabify" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
         <h3>Cabify</h3>
         <p id='cabify-route'>-</p>
       </div>
@@ -76,13 +76,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <h3 class="modal-price"></h3>
+          <div class="modal-origin"></div>
+          <div class="modal-destination"></div>
         <br>
           <h5>Detalles</h5>
           <div class="modal-time"></div>
@@ -95,8 +97,14 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        {{!-- Save trip to db --}}
         <form action='/trips' method="POST">
-          <input type="text" name='price' class="price" hidden>
+          <input type="text" name='price' class="modal-price" hidden>
+          <input type="text" name='origin' class="modal-origin" hidden>
+          <input type="text" name='destination' class="modal-destination" hidden>
+          <input type="text" name='service' class="modal-title" hidden>
+
           <button class="btn btn-primary" type="submit">Save changes</button>
       </form>
         </div>
