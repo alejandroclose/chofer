@@ -24,17 +24,19 @@ router.get('/cabify', function(req, res, next) {
 // Post to save trip to db
 router.post('/', function(req,res,next){
   
-  const user = req.session.currentUser.email;
-  const { price, origin, destination, service } = req.body;
+  const username = req.session.currentUser.email;
+  var origin = req.body.origin;
+  var destination = req.body.destination;
+  var service = req.body.service;
+  var cost = req.body.cost;
 
-  Trip.create({ user, origin, destination, service, price})
+  Trip.create({ username, origin, destination, service, cost})
     .then(data => {
       res.redirect('/routes');
     })
     .catch(error => {
       next(error);
-    })
-  
+    });
 });
 
 module.exports = router;

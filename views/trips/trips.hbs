@@ -100,10 +100,11 @@
         
         {{!-- Save trip to db --}}
         <form action='/trips' method="POST">
-          <input type="text" name='price' class="modal-price" hidden>
-          <input type="text" name='origin' class="modal-origin" hidden>
-          <input type="text" name='destination' class="modal-destination" hidden>
-          <input type="text" name='service' class="modal-title" hidden>
+          <input type="text" name='cost' class="price-input" hidden>
+          <input type="text" name='origin' class="origin-input" hidden>
+          <input type="text" name='destination' class="destination-input" hidden>
+          <input type="text" name='service' class="service-input" hidden>
+
 
           <button class="btn btn-primary" type="submit">Save changes</button>
       </form>

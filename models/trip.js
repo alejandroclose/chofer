@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const tripSchema = new Schema({
-     Name: String,
-     Origin: String,
-     Destination: String,
-     Data: Date,
-     Service: String,
-     Cost: Number,
+     username: String,
+     origin: String,
+     destination: String,
+     service: String,
+     cost: Number,
+     distance: Number
 }, {
     timestamps: {
       createdAt: "created_at",

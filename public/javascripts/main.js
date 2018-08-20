@@ -144,19 +144,23 @@ $(document).ready(function() {
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
                   $(".modal-origin").html("Origen: " + routeOrigin);
+                  $(".origin-input").attr('value', routeOrigin);
                   $(".modal-destination").html("Destino: " + routeDestination);
+                  $(".destination-input").attr('value', routeDestination);
               switch (serviceSelect) {
                 case "taxi-service":
-                console.log('taxi');
                   $(".modal-title").html("Taxi");
+                    $(".service-input").attr('value', 'Taxi');
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
-                  $(".price").attr('value', taxiRoute.cost);
+                    $(".price-input").attr('value', taxiRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
+                    // $(".time-input").attr('value', routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
+                    $('distance-imput').attr('value', routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 2,25€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 1,13€");
