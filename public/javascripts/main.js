@@ -156,10 +156,11 @@ $(document).ready(function() {
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
-                    // $(".time-input").attr('value', routeTime);
+                   $(".time-input").attr('value', routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
+                  $(".distance-input").attr('value', routeDistance);
                     $('distance-imput').attr('value', routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 2,25€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
@@ -169,13 +170,17 @@ $(document).ready(function() {
                 case "uber-service":
                 console.log('uber');
                   $(".modal-title").html("Uber");
+                  $(".service-input").attr('value', 'Uber');
                   $(".modal-price").html("Total: " + uberRoute.cost + "€");
+                  $(".price-input").attr('value', uberRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
+                  $(".time-input").attr('value', routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
+                  $(".distance-input").attr('value', routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0,16€");
                   $(".modal-km-cost").html("Coste por km: 1,42€");
@@ -184,13 +189,17 @@ $(document).ready(function() {
                 case "cabify-service":
                 console.log('cabify');
                   $(".modal-title").html("Cabify");
+                  $(".service-input").attr('value', 'Cabify');
                   $(".modal-price").html("Total: " + cabifyRoute.cost + "€");
+                  $(".price-input").attr('value', cabifyRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
+                  $(".time-input").attr('value', routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
+                  $(".distance-input").attr('value', routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 2€");

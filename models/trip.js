@@ -6,8 +6,9 @@ const tripSchema = new Schema({
      origin: String,
      destination: String,
      service: String,
-     cost: Number,
-     distance: Number
+     distance: Number,
+     time: Number,
+     cost: Number
 }, {
     timestamps: {
       createdAt: "created_at",
