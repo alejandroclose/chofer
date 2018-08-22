@@ -1,37 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Routes = require('../models/routes')
+const Trip = require('../models/trip')
 
 router.get('/', (req, res, next) => {
-  Routes.find({})
-  .then((routes)=>{
-  res.render('routes/index', { routes });
+  Trip.find({})
+  .then((trips)=>{
+  res.render('routes/index', { trips });
 })
 .catch((error)=>{
   next(error);
 })
 });
 
-router.get('/new', (req, res, next) => {
-  res.render('routes/new');
-})
-
-router.post('/new', (req, res, next) => {
-  const { origen, destino, km, tiempo } = req.body;
-  Routes.create({ origen, destino, km, tiempo })
-    .then((data) => {
-      res.redirect('/routes');
-    })
-    .catch(error => {
-      next(error);
-    })
-})
-
 router.get('/:id/edit', (req, res, next) => {
   const { id } = req.params;
-  Routes.findById(id)
-    .then((routes) => {
-      res.render('routes/edit', routes);
+  Trip.findById(id)
+    .then((trips) => {
+      console.log(trips);
+      res.render('routes/edit', trips);
     })
     .catch(error => {
       next(error);

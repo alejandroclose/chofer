@@ -6,9 +6,9 @@
 </div>
 <br><br>
 <ul>
-  {{#each routes}}
+  {{#each trips}}
     <li> 
-      Viaje - {{ @index }} - {{origen}} - {{destino}}
+      Viaje - {{ @index }} - {{origin}} - {{destination}}
       <a href="/routes/{{_id}}/edit">Editar</a>
       <form action="/routes/{{_id}}/remove" method="post">
         <input type="submit" value="delete">
