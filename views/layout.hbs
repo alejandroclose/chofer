@@ -11,30 +11,20 @@
   
 </head>
 <!--Navbar-->
-<nav class="navbar navbar-light navbar-1 white">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15"
-        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span </span></a>
-            </li>
-               <li class="nav-item">
-                <a class="nav-link" href="/trips">Trips</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/routes">Your routes</a>
-            </li>
-        </ul>
-    </div>
+    <div class="dropdown">
+  <button class="btn btn-light" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg"/>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button"><a class="dropdown-item" href="/">Home</a></button>
+    <button class="dropdown-item" type="button"><a class="dropdown-item" href="/trips">Comparar</a></button>
+    <button class="dropdown-item" type="button"><a class="dropdown-item" href="/routes">Mis Viajes</a></button>
+  </div>
+</div>
 
 </nav>
-<!--/.Navbar-->
+<!--/Navbar-->
 <body>
   {{{body}}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
