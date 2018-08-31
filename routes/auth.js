@@ -51,7 +51,7 @@ router.get('/login', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   const {  password, email } = req.body;
   if (  !password || !email) {
-    req.flash('info', 'No deje campos vacios');
+    req.flash('info', 'Debes rellenar todos los campos');
     res.redirect('/auth/login')
   } else {
     User.findOne({ email })
@@ -75,9 +75,11 @@ router.post('/login', (req, res, next) => {
   }
 })
 
-router.post('/logout', (req, res, next) => {
-  delete req.session.currentUser
-  res.redirect('/');
-})
+router.get("/logout", (req, res, next) => {
+  req.session.destroy((err) => {
+
+    res.redirect("/auth/login");
+  });
+});
 
 module.exports = router;
