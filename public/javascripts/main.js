@@ -17,13 +17,15 @@ $(document).ready(function() {
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
       });
-      document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
+      map.addControl(geocoder);
+      // document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
       const startLatLong = [
         position.coords.longitude,
         position.coords.latitude
       ];
       
+      console.log(startLatLong);
       // Destination geocoder
       geocoder.on("result", data => {
         const endLatLong = data.result.center;
