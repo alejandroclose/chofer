@@ -18,13 +18,12 @@ $(document).ready(function() {
         accessToken: mapboxgl.accessToken
       });
       map.addControl(geocoder);
-      // document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
       const startLatLong = [
         position.coords.longitude,
         position.coords.latitude
       ];
-      
+
       console.log(startLatLong);
       // Destination geocoder
       geocoder.on("result", data => {
@@ -38,7 +37,7 @@ $(document).ready(function() {
         //Route
         function getRoute() {
           console.log("routes started");
-          $('#full-route').removeClass('d-none');
+          $("#full-route").removeClass("d-none");
           var start = startLatLong;
           var end = endLatLong;
           var directionsRequest =
@@ -60,7 +59,6 @@ $(document).ready(function() {
 
             const routeOrigin = data.waypoints[0].name;
             const routeDestination = data.waypoints[1].name;
-
 
             const routeDistance = (data.routes[0].distance / 1000).toFixed(2);
             const routeTime = (data.routes[0].duration / 60).toFixed(0);
@@ -139,68 +137,67 @@ $(document).ready(function() {
             document.getElementById("uber-route").innerHTML =
               uberRoute.cost + "€";
 
-              
             //Modal
 
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
-                  $(".modal-origin").html("Origen: " + routeOrigin);
-                  $(".origin-input").attr('value', routeOrigin);
-                  $(".modal-destination").html("Destino: " + routeDestination);
-                  $(".destination-input").attr('value', routeDestination);
+              $(".modal-origin").html("Origen: " + routeOrigin);
+              $(".origin-input").attr("value", routeOrigin);
+              $(".modal-destination").html("Destino: " + routeDestination);
+              $(".destination-input").attr("value", routeDestination);
               switch (serviceSelect) {
                 case "taxi-service":
                   $(".modal-title").html("Taxi");
-                    $(".service-input").attr('value', 'Taxi');
+                  $(".service-input").attr("value", "Taxi");
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
-                    $(".price-input").attr('value', taxiRoute.cost);
+                  $(".price-input").attr("value", taxiRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
-                   $(".time-input").attr('value', routeTime);
+                  $(".time-input").attr("value", routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
-                  $(".distance-input").attr('value', routeDistance);
-                    $('distance-imput').attr('value', routeDistance);
+                  $(".distance-input").attr("value", routeDistance);
+                  $("distance-imput").attr("value", routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 2,25€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 1,13€");
                   break;
 
                 case "uber-service":
-                console.log('uber');
+                  console.log("uber");
                   $(".modal-title").html("Uber");
-                  $(".service-input").attr('value', 'Uber');
+                  $(".service-input").attr("value", "Uber");
                   $(".modal-price").html("Total: " + uberRoute.cost + "€");
-                  $(".price-input").attr('value', uberRoute.cost);
+                  $(".price-input").attr("value", uberRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
-                  $(".time-input").attr('value', routeTime);
+                  $(".time-input").attr("value", routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
-                  $(".distance-input").attr('value', routeDistance);
+                  $(".distance-input").attr("value", routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0,16€");
                   $(".modal-km-cost").html("Coste por km: 1,42€");
                   break;
 
                 case "cabify-service":
-                console.log('cabify');
+                  console.log("cabify");
                   $(".modal-title").html("Cabify");
-                  $(".service-input").attr('value', 'Cabify');
+                  $(".service-input").attr("value", "Cabify");
                   $(".modal-price").html("Total: " + cabifyRoute.cost + "€");
-                  $(".price-input").attr('value', cabifyRoute.cost);
+                  $(".price-input").attr("value", cabifyRoute.cost);
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
-                  $(".time-input").attr('value', routeTime);
+                  $(".time-input").attr("value", routeTime);
                   $(".modal-distance").html(
                     "Distancia total del viaje: " + routeDistance + "km"
                   );
-                  $(".distance-input").attr('value', routeDistance);
+                  $(".distance-input").attr("value", routeDistance);
                   $(".bajada-bandera").html("Bajada de bandera: 0€");
                   $(".modal-minute-cost").html("Coste por minuto: 0€");
                   $(".modal-km-cost").html("Coste por km: 2€");
