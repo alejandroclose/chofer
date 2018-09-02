@@ -25,12 +25,17 @@ a {
   flex-direction: column;
 }
 
+.alert-left{
+  text-align: left;
+}
+
 #map {
   height: 500px;
   width: 100%;
 }
 
 #geocoder-container {
+
   position:absolute;
   top:0;
   width:100%;
@@ -43,11 +48,6 @@ a {
 
 .mapboxgl-ctrl-geocoder { 
   min-width:150%;
-  height: 120px;
-}
-
-.mapboxgl-ctrl-geocoder {
-  min-width: 150%;
 }
 
 .route-info{
