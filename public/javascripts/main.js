@@ -1,4 +1,5 @@
 console.log("main.js");
+
 $(document).ready(function() {
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYWxlamFuZHJvY2xvc2UiLCJhIjoiY2prYTFkODU1MDhidzN2cWp1bmFseGxoZSJ9.HeAugAVJ8wr3NHFCOnkn-Q";
@@ -14,15 +15,18 @@ $(document).ready(function() {
       });
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
 
+      
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
       });
       map.addControl(geocoder);
-
+      map.addControl(new mapboxgl.NavigationControl());
       const startLatLong = [
         position.coords.longitude,
         position.coords.latitude
       ];
+
+      
 
       console.log(startLatLong);
       // Destination geocoder
