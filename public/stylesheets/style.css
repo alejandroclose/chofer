@@ -25,12 +25,8 @@ a {
   flex-direction: column;
 }
 
-.alert-left{
-  text-align: left;
-}
-
 #map {
-  height: 500px;
+  height: 300px;
   width: 100%;
 }
 
@@ -58,16 +54,16 @@ a {
 
 .time{
   height: 100px;
-  width: 15%;
   font-size: 1em;
   text-align: center;
+  margin: 0 15px 0 15px;
 }
 
 .distance{
   height: 100px;
-  width: 15%;
   font-size: 1em;
   text-align: center;
+  margin: 0 15px 0 15px;
 }
 
 #instructions {
@@ -77,12 +73,6 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
   overflow-y: scroll;
   font-family: sans-serif;
-  text-align: center;
-}
-
-#directions{
-  height: 100%;
-  width: 100%;
   text-align: center;
 }
 
@@ -124,12 +114,33 @@ a {
 #select-service{
  text-align: center;
  width: 100%;
+ display: flex;
+
+}
+
+.optimal-route{
+  text-align: center;
+  background-color:#e2e3e5;
 }
 
 .services{
-  width: 150px;
+  width: 100%;
 }
 
+#taxi-service{
+  margin: 0 9px 0  9px;
+}
+
+#uber-service{
+  color: white;
+  margin: 0 9px 0  9px;
+}
+
+#cabify-service{
+  color: white;
+  background-color: #8372f7;
+  margin: 0 9px 0  9px;
+}
 #error{
   text-align: center;
   padding-top: 100px;

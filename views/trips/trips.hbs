@@ -1,6 +1,6 @@
 <div id='navigator'>
 
-  <div class="alert alert-secondary alert-left" role="alert">
+  <div class="alert alert-secondary" role="alert">
   Elige tu destino y compara el coste en cada servicio:
 </div>
 
@@ -31,16 +31,16 @@
 
     {{!-- Route cost on services --}}
 
-    <div id="select-service">
+    <div id="select-service" class="d-flex justify-content-md-center">
       <div id="taxi-service" name="taxi" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
         <h3> Taxi</h3>
         <p id='taxi-route'>-</p>
       </div>
-      <div id="uber-service" name="uber" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
+      <div id="uber-service" name="uber" class="services d-inline-block bg-dark" data-toggle="modal" data-target="#modal">
         <h3> Uber</h3>
         <p id='uber-route'>-</p>
       </div>
-      <div id="cabify-service" name="cabify" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
+      <div id="cabify-service" name="cabify" class="services d-inline-block" data-toggle="modal" data-target="#modal">
         <h3>Cabify</h3>
         <p id='cabify-route'>-</p>
       </div>
@@ -49,7 +49,10 @@
     {{!-- Directions step by step --}}
 
     <br>
-    <h5>¿Cómo llegar?</h5>
+    <div>
+      <h3 class="optimal-route">Ruta Óptima Desde Tu Posición</h3>
+    </div>
+    
     <div id='instructions'></div>
   </div>
 </div>
