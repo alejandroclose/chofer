@@ -123,6 +123,11 @@ a {
   background-color:#e2e3e5;
 }
 
+.instructions{
+  text-align: right;
+  background-color:#e2e3e5;
+}
+
 .services{
   width: 100%;
 }
