@@ -6,13 +6,22 @@
 <br><br>
 <ul>
   {{#each trips}}
-    <li> 
-      Viaje - {{ @index  }} - {{origin}} - {{destination}}
+    <liclass="list-group-item list-group-item-action"> 
+      Viaje {{ @index  }} {{origin}} - {{destination}}
       <a href="/routes/{{_id}}/edit">Editar</a>
       <form action="/routes/{{_id}}/remove" method="post">
-        <input type="submit" value="delete">
+        <input class="list-group-item list-group-item-action" type="submit" value="delete">
       </form>
     </li>
   {{/each}}
 </ul>
+</div>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
 </div>
