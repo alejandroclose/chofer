@@ -1,27 +1,18 @@
 <div class="container" id="detalles">
 <h1> Your Routes</h1>
 <div>
- <a href="/trips">New route</a>
+ <a class="list-group-item list-group-item-success" href="/trips">New route</a>
 </div>
 <br><br>
 <ul>
   {{#each trips}}
     <liclass="list-group-item list-group-item-action"> 
       Viaje {{ @index  }} {{origin}} - {{destination}}
-      <a href="/routes/{{_id}}/edit">Editar</a>
+      <a class="list-group-item list-group-item-warning" href="/routes/{{_id}}/edit">Editar</a>
       <form action="/routes/{{_id}}/remove" method="post">
-        <input class="list-group-item list-group-item-action" type="submit" value="delete">
+        <input class="list-group-item list-group-item-action list-group-item-danger" type="submit" value="delete">
       </form>
     </li>
   {{/each}}
 </ul>
-</div>
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">
-    Cras justo odio
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
 </div>
