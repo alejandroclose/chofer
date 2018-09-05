@@ -6,8 +6,12 @@
 <br><br>
 <ul>
   {{#each trips}}
-    <liclass="list-group-item list-group-item-action"> 
-      Viaje {{ @index  }} {{origin}} - {{destination}}
+    <li class="list-group-item list-group-item-action"> <b>
+      Viaje {{ @index  }} <br>
+      <img id="reddot" src="images/reddot.jpg" alt="">
+      <input type="text" name="origen" value="{{origin}}"><br>
+      <img id="pointer" src="images/red.png" alt="">
+      <input type="text" name="destino" value="{{destination}}">
       <a class="list-group-item list-group-item-warning" href="/routes/{{_id}}/edit">Editar</a>
       <form action="/routes/{{_id}}/remove" method="post">
         <input class="list-group-item list-group-item-action list-group-item-danger" type="submit" value="delete">

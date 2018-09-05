@@ -155,3 +155,13 @@ a {
 navbar.navbar-1 .navbar-toggler-icon {
   background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
 }
+
+#reddot{
+width:20px;
+height: 20px;
+}
+
+#pointer{
+  width:15px;
+  height: 15px;
+  }
