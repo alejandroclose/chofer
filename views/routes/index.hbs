@@ -12,11 +12,11 @@
       <input type="text" name="origen" value="{{origin}}"><br>
       <img id="pointer" src="images/red.png" alt="">
       <input type="text" name="destino" value="{{destination}}"><br><br>
-      Tiempo aproximado {{ time }} minutes / {{ distance  }} km <br><br>
+      Tiempo aproximado {{ time }} min / {{ distance  }} km <br><br>
       Total: {{ cost }} € <br><br>
-      <a class="list-group-item list-group-item-warning" href="/routes/{{_id}}/edit">Editar</a>
+      <a href="/routes/{{_id}}/edit"> <img id="edit" src="images/edit.png"></a><br><br>
       <form action="/routes/{{_id}}/remove" method="post">
-        <input class="list-group-item list-group-item-action list-group-item-danger" type="submit" value="delete">
+           <input type="image" id="trash" src="images/trash.png" />
       </form>
     </li>
   {{/each}}
