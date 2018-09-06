@@ -1,4 +1,3 @@
-<div id="logout"><a href="/auth/login">{{currentUser.name}} Log Out</a></div>
 <div class="container" id="detalles">
 <h3>Editar</h3>
 <form action="/routes/{{id}}" method="post">
@@ -7,8 +6,9 @@
 
   <label for="">Destino:</label>
   <input type="text" name="destino" value="{{destination}}"><br>
- 
+  
   <button class="btn btn-warning  btn-lg btn-block" type="submit">Update</button>
+  <input type="image" id="trash" src="/images/upgrade.png" />
 </form>
 </div>
 <div id='map'></div>
