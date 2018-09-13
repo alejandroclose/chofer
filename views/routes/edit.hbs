@@ -1,11 +1,13 @@
 <div class="container" id="detalles">
 <h3>Editar</h3>
 <form action="/routes/{{id}}" method="post">
+<label for="">Sitio</label>
+<input type="text" name="Nombre del sitio " value="{{name}}"><br>
   <img id="reddot" src="/images/reddot.jpg" alt="">
   <input type="text" name="origen" value="{{origin}}"><br>
   <img id="pointer" src="/images/red.png" alt="">
-  <input type="text" name="destino" value="{{destination}}"><br>
-  <button class="btn btn-outline-primary"  type="submit">Update</button>
+  <input type="text" name="destino" value="{{destination}}"><br><br>
+  <button class="btn btn-outline-primary"  type="submit">Actualizar</button>
 </form>
 </div>
 <div id='map'></div>

@@ -18,7 +18,8 @@ router.post('/', function(req,res,next){
   var service = req.body.service;
   var cost = req.body.cost;
   var time = req.body.time;
-  var distance = req.body.distance
+  var distance = req.body.distance;
+  
 
   Trip.create({ username, origin, destination, service, time, distance, cost})
     .then(data => {
