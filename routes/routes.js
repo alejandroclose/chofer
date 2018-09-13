@@ -27,7 +27,7 @@ router.get('/:id/edit', (req, res, next) => {
 router.post('/:id', (req, res, next) => {
   const { id } = req.params;
   const { origen , destino, } = req.body;
-  Routes.findByIdAndUpdate(id, { origen, destino})
+  Trip.findByIdAndUpdate(id, { origen, destino})
     .then((data) => {
       res.redirect('/routes');
     })
@@ -37,7 +37,7 @@ router.post('/:id', (req, res, next) => {
 })
 router.post('/:id/remove', (req, res, next) => {
   const { id } = req.params;
-  Routes.findByIdAndRemove(id)
+  Trip.findByIdAndRemove(id)
     .then(() => {
       res.redirect('/routes')
     })
