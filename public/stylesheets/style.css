@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
 }
 
 .brand{
@@ -110,7 +111,9 @@ a {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
+ 
 }
+
 
 #select-service{
  text-align: center;
