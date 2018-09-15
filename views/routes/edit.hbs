@@ -1,13 +1,22 @@
-<div class="container" id="detalles">
-<h3>Editar</h3>
-<form action="/routes/{{id}}" method="post">
-<label for="">Sitio:</label>
-<input type="text" name="Nombre del sitio " value="{{name}}"><br>
-  <img id="reddot" src="/images/reddot.jpg" alt="">
-  <input type="text" name="origen" value="{{origin}}"><br>
-  <img id="pointer" src="/images/red.png" alt="">
-  <input type="text" name="destino" value="{{destination}}"><br><br>
-  <button class="btn btn-outline-primary"  type="submit">Actualizar</button>
-</form>
+<div class="container" id="detalles" class="mx-sm-3 mb-2">
+  <h3>Editar</h3>
+  <form action="/routes/{{id}}" method="post">
+    <div class="form-group row">
+      <label for="name" class="col-form-label"></label>
+      <div class="col-sm-10">
+        <input type="text" id="name" name="name" value="{{name}}" class="form-control">
+      </div>
+      <div class="col-sm-10">
+        <button class="btn btn-outline-primary" type="submit">Actualizar</button>
+      </div>
+    </div>
+  </form>
 </div>
 <div id='map'></div>
+
+
+
+<div class="form-group">
+  <label for="formGroupExampleInput">Example label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+</div>

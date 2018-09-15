@@ -155,7 +155,7 @@ $(document).ready(function() {
                   $(".service-input").attr("value", "Taxi");
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
                   $(".price-input").attr("value", taxiRoute.cost);
-                  $(".name-input").attr("value", "Mi viaje en Taxi")
+                  $(".name-input").attr("value", "Mi viaje en Taxi");
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
@@ -176,6 +176,7 @@ $(document).ready(function() {
                   $(".service-input").attr("value", "Uber");
                   $(".modal-price").html("Total: " + uberRoute.cost + "€");
                   $(".price-input").attr("value", uberRoute.cost);
+                  $(".name-input").attr("value", "Mi viaje en Uber");
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
@@ -195,6 +196,7 @@ $(document).ready(function() {
                   $(".service-input").attr("value", "Cabify");
                   $(".modal-price").html("Total: " + cabifyRoute.cost + "€");
                   $(".price-input").attr("value", cabifyRoute.cost);
+                  $(".name-input").attr("value", "Mi viaje en Cabify");
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
