@@ -1,14 +1,14 @@
 <div id='navigator'>
 
   <div class="instructions">
-  Elige tu destino y compara el coste en cada servicio
-</div>
+    Elige tu destino y compara el coste en cada servicio
+  </div>
 
   <div id='map'></div>
   <div class="instructions">
     <p> </p>
-</div>
-  
+  </div>
+
   <div id='full-route' class='d-none'>
 
     {{!-- Route distance and time --}}
@@ -54,7 +54,7 @@
     <div>
       <h5 class="optimal-route">Ruta Óptima Desde Tu Posición</h5>
     </div>
-    
+
     <div id='instructions'></div>
   </div>
 </div>
@@ -71,21 +71,21 @@
       </div>
       <div class="modal-body">
         <h3 class="modal-price"></h3>
-          <div class="modal-origin"></div>
-          <div class="modal-destination"></div>
+        <div class="modal-origin"></div>
+        <div class="modal-destination"></div>
         <br>
-          <h5>Detalles</h5>
-          <div class="modal-time"></div>
-          <div class="modal-distance"></div>
-          <br>
-          <h5>Tarifas</h5>
-          <div class="bajada-bandera"></div>
-          <div class="modal-minute-cost"></div>
-          <div class="modal-km-cost"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
+        <h5>Detalles</h5>
+        <div class="modal-time"></div>
+        <div class="modal-distance"></div>
+        <br>
+        <h5>Tarifas</h5>
+        <div class="bajada-bandera"></div>
+        <div class="modal-minute-cost"></div>
+        <div class="modal-km-cost"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
         {{!-- Save trip to db --}}
         <form action='/trips' method="POST">
           <input type="text" name='cost' class="price-input" hidden>
@@ -98,11 +98,21 @@
 
 
           <button class="btn btn-primary" type="submit">Save changes</button>
-      </form>
-        </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+
+<script src="/javascripts/main.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>

@@ -15,7 +15,6 @@ $(document).ready(function() {
       });
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
 
-      
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
       });
@@ -25,8 +24,6 @@ $(document).ready(function() {
         position.coords.longitude,
         position.coords.latitude
       ];
-
-      
 
       console.log(startLatLong);
       // Destination geocoder
@@ -142,7 +139,7 @@ $(document).ready(function() {
               uberRoute.cost + "€";
 
             //Modal
-            
+
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
               $(".modal-origin").html("Origen: " + routeOrigin);

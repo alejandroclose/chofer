@@ -1,29 +1,47 @@
 <div class="container" id="detalles">
   <div>
-    <img id="routes" src="images/yourroutes.jpg" alt=""><br><br>
+    <img id="routes" src="images/yourroutes.jpg" alt="">
+    <br>
+    <br>
     <a id="link" class="btn btn-outline-primary" href="/trips">Nueva ruta</a>
   </div>
-  <br><br>
+  <br>
+  <br>
   <ul>
     {{#each trips}}
-    <li class="list-group-item list-group-item-action"> <b>
-        {{name}} <br><br>
-        <img id="reddot" src="images/reddot.jpg" alt="">
-        <input type="text" name="origen" value="{{origin}}"><br>
-        <img id="pointer" src="images/red.png" alt="">
-        <input type="text" name="destino" value="{{destination}}"><br><br> Tiempo aproximado {{ time }} min / {{ distance
-        }} km <br><br> Total: {{ cost }} € <br><br>
-        <div id="simbolos" class="row">
-          <div class="col-md-1">
-          <a href="/routes/{{_id}}/edit"> <img id="edit" src="images/edit.png"></a>
-          </div>
-          <div class="col-md-1">
-          <form action="/routes/{{_id}}/remove" method="post">
-            <input type="image" id="trash" src="images/trash.png" />
-            </div>
+    <li class="list-group-item list-group-item-action">
+      <b>
+        <div>
+          {{name}}
+          <a href="/routes/{{_id}}/edit">
+            <img id="edit" src="images/edit.png">
+          </a>
         </div>
+        <br>
+        <div>
+          <img id="reddot" src="images/reddot.jpg" alt="origin-logo">
+          <input type="text" name="origen" value="{{origin}}" disabled>
+          <br>
+          <br>
+          <img id="pointer" src="images/red.png" alt="destination-logo">
+          <input type="text" name="destino" value="{{destination}}" disabled>
+        </div>
+        <br>
+        <div>
+          {{ time }} min / {{ distance }} km
+        </div>
+        <br>
+        <div id="simbolos">
+          <div>Total: {{ cost }} €</div>
+            <div>
+              <form action="/routes/{{_id}}/remove" method="post">
+              <input type="image" id="trash" src="images/trash.png" />
+            </div>
+            
+          </div>
         </form>
     </li>
     {{/each}}
   </ul>
+</div>
 </div>
