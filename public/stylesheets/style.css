@@ -186,8 +186,6 @@ height: 20px;
   }
 
   .carousel{
-    height: 450px;
-    margin-left: 40px;
   }
 
   #mensaje{
@@ -205,7 +203,3 @@ height: 20px;
   #link{
     margin-left: 5%;
   }
-
-  /* .form-control{
-    width:25%;
-  } */
