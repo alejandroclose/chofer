@@ -26,7 +26,7 @@ router.get('/:id/edit', (req, res, next) => {
 router.post('/:id', (req, res, next) => {
   const { id } = req.params;
   const { origen , destino, name } = req.body;
-  Trip.findByIdAndUpdate(id, { origen, destino,name})
+  Trip.findByIdAndUpdate(id, { origen, destino, name})
     .then((data) => {
       res.redirect('/routes');
     })
