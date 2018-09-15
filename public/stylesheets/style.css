@@ -29,7 +29,13 @@ a {
 
 #map {
   height: 400px;
-  width: 99%;
+  width: 100%;
+}
+
+#geocoder{
+  width: 280px;
+  margin: 0 auto;
+
 }
 
 #geocoder-container {
@@ -45,7 +51,8 @@ a {
     }
 
 .mapboxgl-ctrl-geocoder { 
-  min-width:150%;
+  min-width:100%;
+  margin: 0 auto;
 }
 
 .route-info{
@@ -75,7 +82,9 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
   overflow-y: scroll;
   font-family: sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 .modal-body{
@@ -127,7 +136,7 @@ a {
 
 .instructions{
   text-align: right;
-  background-color:#e2e3e5;
+  background-color:#e6e4e0;;
 }
 
 .services{

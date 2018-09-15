@@ -1,8 +1,18 @@
 <div id='navigator'>
 
   <div class="instructions">
-    Elige tu destino y compara el coste en cada servicio
+    <div class="search-instructions">
+      <p>Elige tu destino</p>
+    </div>
+    <div class="geocoder-instructions">
+      <div id="geocoder"></div>
+    </div>
   </div>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.css' type='text/css'/>
+
 
   <div id='map'></div>
   <div class="instructions">
@@ -84,7 +94,7 @@
         <div class="modal-km-cost"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
         {{!-- Save trip to db --}}
         <form action='/trips' method="POST">
@@ -97,7 +107,7 @@
           <input type="text" name='name' class="name-input" hidden>
 
 
-          <button class="btn btn-primary" type="submit">Save changes</button>
+          <button class="btn btn-success" type="submit">¡Lo cogeré!</button>
         </form>
       </div>
     </div>

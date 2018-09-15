@@ -11,7 +11,7 @@ $(document).ready(function() {
         container: "map", // container id
         style: "mapbox://styles/mapbox/streets-v9", // stylesheet location
         center: point, // starting position [lng, lat]
-        zoom: 14 // starting zoom
+        zoom: 13 // starting zoom
       });
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
       const geocoder = new MapboxGeocoder({
@@ -26,15 +26,16 @@ $(document).ready(function() {
           });
       }
       });
-      
-      map.addControl(geocoder);
+      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+      // map.addControl(geocoder);
       map.addControl(new mapboxgl.NavigationControl());
+      
+
       const startLatLong = [
         position.coords.longitude,
         position.coords.latitude
       ];
-
-      console.log(startLatLong);
+      
       // Destination geocoder
       geocoder.on("result", data => {
         const endLatLong = data.result.center;
