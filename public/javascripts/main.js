@@ -16,7 +16,15 @@ $(document).ready(function() {
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        country: 'es'
+        country: 'es',
+        filter: function (item) {
+          return item.context.map(function (i) {
+              // this example attempts to find the `region` named `New South Wales`
+              return (i.id.split('.').shift() === 'place' && i.text == 'Barcelona');
+          }).reduce(function (acc, cur) {
+              return acc || cur;
+          });
+      }
       });
       
       map.addControl(geocoder);
