@@ -14,10 +14,11 @@ $(document).ready(function() {
         zoom: 14 // starting zoom
       });
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
-
       const geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
+        accessToken: mapboxgl.accessToken,
+        country: 'es'
       });
+      
       map.addControl(geocoder);
       map.addControl(new mapboxgl.NavigationControl());
       const startLatLong = [
