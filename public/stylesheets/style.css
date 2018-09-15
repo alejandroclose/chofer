@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
 }
 
 .brand{
@@ -82,7 +83,7 @@ a {
 }
 
 #signup{
-  background-color:orange;
+  background-color:rgba(253, 218, 50);
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -90,7 +91,7 @@ a {
 }
 
 #login{
-  background-color:orange;
+  background-color:rgba(253, 218, 50);
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -110,7 +111,9 @@ a {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
+ 
 }
+
 
 #select-service{
  text-align: center;
@@ -178,10 +181,25 @@ height: 20px;
   }
 
   #routes{
-    width:100%;
+    width:95%;
     height:100%;
   }
 
   .carousel{
     height: 450px;
+    margin-left: 40px;
+  }
+
+  #mensaje{
+    color:red;
+  }
+
+  #simbolos{
+    margin-left:46%;
+    margin-right: 40%;
+    
+  }
+
+  #link{
+    margin-left: 5%;
   }

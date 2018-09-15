@@ -1,27 +1,22 @@
 <div class="container" id="signup">
-<h2>Signup</h2>
+<h2>Regístrate</h2><br>
 <form action="/auth/signup" method='post'>
   <div class="form-group ">
     <label for="exampleInputEmail1"> Nombre de Usuario</label>
    <input type="text"  name="name" class="form-control" placeholder="Nombre de usuario" aria-label="name" aria-describedby="basic-addon1">
   </div>
-  <br>
   <div class="form-group">
     <label for="exampleInputEmail1">Correo electronico</label>
    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electronico">
   </div>
-  <br>
   <div class="form-group">
     <label for="exampleInputPassword1">Contraseña</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
   </div>
-    <br> {{ message }}
-    <br>
-    <br>
-  <button type="submit" class="btn btn-success">Crea una cuenta</button>
-  <br>
-</form> 
-<br>
+    <br> <div id="mensaje">{{ message }}</div>
+    <br><br>
+  <button type="submit" class="btn btn-outline-primary">Crea una cuenta</button>
+</form> <br>
 ¿Ya tienes cuenta? <a href="/auth/login">Entra aquí</a>
 </div>
 </div>

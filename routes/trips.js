@@ -19,9 +19,10 @@ router.post('/', function(req,res,next){
   var cost = req.body.cost;
   var time = req.body.time;
   var distance = req.body.distance;
+  var name = req.body.name;
   
 
-  Trip.create({ username, origin, destination, service, time, distance, cost})
+  Trip.create({ username, origin, destination, service, time, distance, cost,name})
     .then(data => {
       res.redirect('/routes');
     })
