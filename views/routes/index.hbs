@@ -1,18 +1,18 @@
 <div class="container" id="detalles">
-  <img id="routes" src="images/yourroutes.jpg" alt="">
+  <img id="routes" src="images/yourroutes.jpg" alt=""><br><br>
 <div>
- <a class="list-group-item list-group-item-warning" href="/trips">New route</a>
+ <a class="btn btn-outline-primary" href="/trips">Nueva ruta</a>
 </div>
 <br><br>
 <ul>
   {{#each trips}}
     <li class="list-group-item list-group-item-action"> <b>
-      Route {{ @index  }} <br><br>
+      {{name}} <br><br>
       <img id="reddot" src="images/reddot.jpg" alt="">
       <input type="text" name="origen" value="{{origin}}"><br>
       <img id="pointer" src="images/red.png" alt="">
       <input type="text" name="destino" value="{{destination}}"><br><br>
-      Approximate time {{ time }} min / {{ distance  }} km <br><br>
+      Tiempo aproximado {{ time }} min / {{ distance  }} km <br><br>
       Total: {{ cost }} € <br><br>
       <a href="/routes/{{_id}}/edit"> <img id="edit" src="images/edit.png"></a><br><br>
       <form action="/routes/{{_id}}/remove" method="post">

@@ -10,6 +10,7 @@ const routesSchema = new Schema({
   distance: String,
   time: String,
   price: Number,
+  
 }, {
     timestamps: {
       createdAt: "created_at",
