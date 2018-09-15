@@ -1,5 +1,5 @@
 <div class="container" id="login">
-  <h2>Log in</h2>
+  <h2>Accede a tu cuenta</h2>
 <form action="/auth/login" method='post'>
     <br>
   <div class="form-group">
@@ -11,10 +11,9 @@
     <label for="exampleInputPassword1">Contraseña</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
   </div>
-    <br> {{ messages }}
-    <br>
-    <br>
-  <button type="submit" class="btn btn-success">Log in</button>
+    <br> <div id="mensaje">{{ messages }}</div>
+    <br><br>
+  <button type="submit" class="btn btn-outline-primary">Log in</button>
 </form>
 <br>
 ¿No tienes cuenta? <a href="/auth/signup">Crea una cuenta</a>
