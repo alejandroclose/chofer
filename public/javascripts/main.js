@@ -142,7 +142,7 @@ $(document).ready(function() {
               uberRoute.cost + "€";
 
             //Modal
-
+            
             $("#select-service").on("click", ".services", function() {
               serviceSelect = $(this).attr("id");
               $(".modal-origin").html("Origen: " + routeOrigin);
@@ -155,6 +155,7 @@ $(document).ready(function() {
                   $(".service-input").attr("value", "Taxi");
                   $(".modal-price").html("Total: " + taxiRoute.cost + "€");
                   $(".price-input").attr("value", taxiRoute.cost);
+                  $(".name-input").attr("value", "Mi viaje en Taxi")
                   $(".modal-time").html(
                     "Tiempo total del viaje: " + routeTime + "min"
                   );
