@@ -1,6 +1,7 @@
 console.log("main.js");
 
 $(document).ready(function() {
+
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYWxlamFuZHJvY2xvc2UiLCJhIjoiY2prYTFkODU1MDhidzN2cWp1bmFseGxoZSJ9.HeAugAVJ8wr3NHFCOnkn-Q";
 
@@ -13,6 +14,8 @@ $(document).ready(function() {
         center: point, // starting position [lng, lat]
         zoom: 13 // starting zoom
       });
+
+     
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -35,6 +38,11 @@ $(document).ready(function() {
         position.coords.longitude,
         position.coords.latitude
       ];
+
+      map.on('load',function(){
+        console.log('loading catched')
+      })
+
       
       // Destination geocoder
       geocoder.on("result", data => {
