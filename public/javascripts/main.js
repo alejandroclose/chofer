@@ -39,8 +39,11 @@ $(document).ready(function() {
         position.coords.latitude
       ];
 
+      // Adding placeholder
       map.on('load',function(){
-        console.log('loading catched')
+        console.log('loading catched');
+        $('.timeline-wrapper').addClass('d-none');
+        $('#navigator').removeClass('d-none');
       })
 
       
