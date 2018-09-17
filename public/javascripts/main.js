@@ -44,8 +44,9 @@ $(document).ready(function() {
         console.log('loading catched');
         $('.timeline-wrapper').addClass('d-none');
         $('.instructions').removeClass('d-none');
+        $('.search-instructions').removeClass('d-none');
         $('.geocoder-instructions').removeClass('d-none');
-        $('#map').removeClass('d-none');
+
       })
 
       

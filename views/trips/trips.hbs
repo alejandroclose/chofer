@@ -8,18 +8,18 @@
 </div>
 <div id='navigator'>
   <div class="instructions d-none">
-    <div class="search-instructions">
+    <div class="search-instructions d-none">
       <p>Elige tu destino</p>
     </div>
-    <div class="geocoder-instructions d-none">
-      <div id="geocoder"></div>
+    <div id="geocoder" class="geocoder-instructions d-none">
+      </div>
     </div>
   </div>
-  <div id='map'></div>
+  <div id='map' class="mapboxgl-map"></div>
   <div class="instructions">
   </div>
   <div id='full-route' class='d-none'>
-  
+
     {{!-- Route distance and time --}}
     <div class='route-info'>
       <div class='distance'>
@@ -44,7 +44,9 @@
 
     <div id="select-service" class="d-flex justify-content-md-center">
       <div id="taxi-service" name="taxi" class="services d-inline-block bg-warning" data-toggle="modal" data-target="#modal">
-        <h3> Taxi</h3>
+        <h3>
+          <center>Taxi</center>
+        </h3>
         <p id='taxi-route'>-</p>
       </div>
       <div id="uber-service" name="uber" class="services d-inline-block bg-dark" data-toggle="modal" data-target="#modal">
