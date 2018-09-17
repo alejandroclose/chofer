@@ -8,7 +8,7 @@ body {
   font-weight: bolder; 
 }
 
-h1, h5{
+h1, h3, h5{
   text-align: center;
 }
 
@@ -28,9 +28,23 @@ a {
 }
 
 #map {
-  height: 400px;
-  width: 99%;
+  height: 401px;
+  width: 100%;
 }
+
+#geocoder{
+  width: 280px;
+  margin: 0 auto;
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+
+}
+.geocoder-icon-search{
+  display: block !important;
+  margin: 0 50px 0 0 !important;
+}
+
 
 #geocoder-container {
 
@@ -45,7 +59,8 @@ a {
     }
 
 .mapboxgl-ctrl-geocoder { 
-  min-width:150%;
+  min-width:100%;
+
 }
 
 .route-info{
@@ -75,7 +90,9 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
   overflow-y: scroll;
   font-family: sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 .modal-body{
@@ -127,7 +144,7 @@ a {
 
 .instructions{
   text-align: right;
-  background-color:#e2e3e5;
+  background-color:white;
 }
 
 .services{
@@ -205,3 +222,45 @@ height: 20px;
   #link{
     margin-left: 5%;
   }
+
+  /* placeholder loading */
+
+  .timeline-item {
+    background: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 420px;
+}
+
+@keyframes placeHolderShimmer{
+  0%{
+      background-position: -1468px 0
+  }
+  100%{
+      background-position: 1468px 0
+  }
+}
+
+.animated-background {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 3000px 3104px;
+  height: 420px;
+  position: relative;
+}
+
+/* Arrow down in maps*/
+
+.glyphicon{
+  height: 10px;
+  width: 20px;
+}

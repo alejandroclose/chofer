@@ -1,6 +1,7 @@
 console.log("main.js");
 
 $(document).ready(function() {
+
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYWxlamFuZHJvY2xvc2UiLCJhIjoiY2prYTFkODU1MDhidzN2cWp1bmFseGxoZSJ9.HeAugAVJ8wr3NHFCOnkn-Q";
 
@@ -11,22 +12,44 @@ $(document).ready(function() {
         container: "map", // container id
         style: "mapbox://styles/mapbox/streets-v9", // stylesheet location
         center: point, // starting position [lng, lat]
-        zoom: 14 // starting zoom
+        zoom: 13 // starting zoom
       });
+
+     
       var originMarker = new mapboxgl.Marker().setLngLat(point).addTo(map);
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        country: 'es'
+        country: 'es',
+        filter: function (item) {
+          return item.context.map(function (i) {
+              // this example attempts to find the `region` named `New South Wales`
+              return (i.id.split('.').shift() === 'place' && i.text == 'Barcelona');
+          }).reduce(function (acc, cur) {
+              return acc || cur;
+          });
+      }
       });
-      
-      map.addControl(geocoder);
+      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+      // map.addControl(geocoder);
       map.addControl(new mapboxgl.NavigationControl());
+      
+
       const startLatLong = [
         position.coords.longitude,
         position.coords.latitude
       ];
 
-      console.log(startLatLong);
+      // Adding placeholder
+      map.on('load',function(){
+        console.log('loading catched');
+        $('.timeline-wrapper').addClass('d-none');
+        $('.instructions').removeClass('d-none');
+        $('.search-instructions').removeClass('d-none');
+        $('.geocoder-instructions').removeClass('d-none');
+
+      })
+
+      
       // Destination geocoder
       geocoder.on("result", data => {
         const endLatLong = data.result.center;
