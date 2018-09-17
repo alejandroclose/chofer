@@ -42,7 +42,7 @@ a {
 }
 .geocoder-icon-search{
   display: block !important;
-  margin: 0 50px 0 0 !important;
+  margin: 0 50px 50px -30px !important;
 }
 
 
