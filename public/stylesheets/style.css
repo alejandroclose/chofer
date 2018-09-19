@@ -216,11 +216,7 @@ height: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-  }
-
-  #link{
-    margin-left: 5%;
+    margin-left: 80px;
   }
 
   /* placeholder loading */
@@ -263,4 +259,37 @@ height: 20px;
 .glyphicon{
   height: 10px;
   width: 20px;
+}
+
+#choice{
+  width: 100px;
+  height: 65px;
+  border: 1px solid gainsboro;
+  text-align: center;
+}
+#display_here {
+  background: whitesmoke;
+  border: 1px solid gainsboro;
+  width: 100px;
+  height: 75px;
+}
+#display_here img {
+  width: 100px;
+  height: 75px;
+}
+#fotoService{
+  width: 100px;
+  height: 75px;
+  border: 1px solid gainsboro;
+  margin: 0 0 50% 50%;
+ 
+}
+
+#cuadro{
+float:left;
+width: 100px;
+height: 100px;
+border: 1px solid gainsboro;
+text-align: center;
+margin-top: 30px;
 }

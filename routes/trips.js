@@ -20,6 +20,7 @@ router.post('/', function(req,res,next){
   var time = req.body.time;
   var distance = req.body.distance;
   var name = req.body.name;
+  var choice= req.body.choice;
   
 
   Trip.create({ username, origin, destination, service, time, distance, cost,name})
