@@ -8,8 +8,9 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require('connect-flash');
 const auth = require('./middleware/auth');
+require('dotenv').config();
 
-mongoose.connect('mongodb://chofer:choferapp1@ds217002.mlab.com:17002/chofer-app', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log('😀')
   })
