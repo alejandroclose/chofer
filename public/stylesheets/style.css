@@ -100,7 +100,9 @@ a {
 }
 
 #signup{
-  background-color:rgba(253, 218, 50);
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+ 
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -108,7 +110,8 @@ a {
 }
 
 #login{
-  background-color:rgba(253, 218, 50);
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
